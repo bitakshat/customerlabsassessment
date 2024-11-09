@@ -176,7 +176,7 @@ function App() {
 
         {/* Main Content */}
         <div className="p-8">
-          <h1>Hello world</h1>
+          <button onClick={toggleSidebar} className='px-[10px] py-[15px] border-2 border-gray-400 text-gray-500 hover:bg-gray-200'>Save Segment</button>
         </div>
       </div>
     </div>
