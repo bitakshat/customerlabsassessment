@@ -6,6 +6,16 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { IoChevronBackSharp } from "react-icons/io5";
 import { IoRemove } from "react-icons/io5";
 
+const initialSchemaOptions = [
+  { label: "First Name", value: "first_name", hasSelected: false },
+  { label: "Last Name", value: "last_name", hasSelected: false },
+  { label: "Gender", value: "gender", hasSelected: false },
+  { label: "Age", value: "age", hasSelected: false },
+  { label: "Account Name", value: "account_name", hasSelected: false },
+  { label: "City", value: "city", hasSelected: false },
+  { label: "State", value: "state", hasSelected: false },
+];
+
 function App() {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -70,6 +80,9 @@ function App() {
         body: JSON.stringify(data),
       });
       console.log("response: ", response)
+      setSegmentName('');
+      setSchemaOptions(initialSchemaOptions);
+      setSelectedSchemas([]);
       if (response.ok) {
         alert('Data uploaded successfully');
       }
